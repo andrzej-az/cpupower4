@@ -1,0 +1,96 @@
+on:
+  push:
+    tags:
+    - 'v*'
+
+name: release build
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1.0.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+    - name: Output Release URL File
+      run: echo "${{ steps.create_release.outputs.upload_url }}" > release_url
+    - name: Save Release URL File for publish
+      uses: actions/upload-artifact@v1
+      with:
+        name: release_url
+        path: release_url
+  pkg:
+    name: Create release artifacts
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install -y make gettext libglib2.0-bin zip devscripts debhelper rpm
+    - name: Release GNOME extension artifacts
+      id: package
+      run: |
+        VERSION="10.1.2"
+        echo "::set-output name=version::$VERSION"
+        make dist
+        cp target/cpupower-$VERSION.zip $GITHUB_WORKSPACE/cpupower-$VERSION.zip
+        cp target/gnome-shell-extension-cpupower-$VERSION.tar.gz $GITHUB_WORKSPACE/gnome-shell-extension-cpupower-$VERSION.tar.gz
+        cp target/gnome-shell-extension-cpupower_$VERSION.deb $GITHUB_WORKSPACE/gnome-shell-extension-cpupower_$VERSION.deb
+        cp target/gnome-shell-extension-cpupower-$VERSION-1.noarch.rpm $GITHUB_WORKSPACE/gnome-shell-extension-cpupower-$VERSION-1.noarch.rpm
+    - name: Load Release URL File from release job
+      uses: actions/download-artifact@v1
+      with:
+        name: release_url
+    - name: Get Release File Name & Upload URL
+      id: get_release_info
+      run: |
+        value=`cat release_url/release_url`
+        echo ::set-output name=upload_url::$value
+    - name: Upload GNOME Extension Release Asset ZIP
+      id: upload-release-asset-zip
+      uses: actions/upload-release-asset@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.get_release_info.outputs.upload_url }}
+        asset_path: cpupower-${{ steps.package.outputs.version }}.zip
+        asset_name: cpupower-${{ steps.package.outputs.version }}.zip
+        asset_content_type: application/zip
+    - name: Upload GNOME Extension Release Asset TGZ
+      id: upload-release-asset-tgz
+      uses: actions/upload-release-asset@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.get_release_info.outputs.upload_url }}
+        asset_path: gnome-shell-extension-cpupower-${{ steps.package.outputs.version }}.tar.gz
+        asset_name: gnome-shell-extension-cpupower-${{ steps.package.outputs.version }}.tar.gz
+        asset_content_type: application/gzip
+    - name: Upload GNOME Extension Release Asset DEB
+      id: upload-release-asset-deb
+      uses: actions/upload-release-asset@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.get_release_info.outputs.upload_url }}
+        asset_path: gnome-shell-extension-cpupower_${{ steps.package.outputs.version }}.deb
+        asset_name: gnome-shell-extension-cpupower_${{ steps.package.outputs.version }}.deb
+        asset_content_type: application/vnd.debian.binary-package
+    - name: Upload GNOME Extension Release Asset RPM
+      id: upload-release-asset-rpm
+      uses: actions/upload-release-asset@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.get_release_info.outputs.upload_url }}
+        asset_path: gnome-shell-extension-cpupower-${{ steps.package.outputs.version }}-1.noarch.rpm
+        asset_name: gnome-shell-extension-cpupower-${{ steps.package.outputs.version }}-1.noarch.rpm
+        asset_content_type: application/x-rpm

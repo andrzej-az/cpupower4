@@ -1,0 +1,9 @@
+*~
+.pgen
+.last-settings
+mko.cpupower.policy
+*.mo
+!locale/*/LC_MESSAGES/gnome-shell-extension-cpupower.mo
+target
+node_modules
+package-lock.json

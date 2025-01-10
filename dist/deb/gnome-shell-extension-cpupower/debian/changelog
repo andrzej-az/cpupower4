@@ -1,0 +1,167 @@
+gnome-shell-extension-cpupower (10.1.2-1~jammy1) jammy; urgency=medium
+
+  * Create jammy release
+
+ -- Fin Christensen <fin-ger@posteo.me>  Sun, 22 May 2022 21:06:16 +0200
+
+gnome-shell-extension-cpupower (10.1.2-1~focal1) focal; urgency=medium
+
+  * Create focal release
+
+ -- Fin Christensen <fin-ger@posteo.me>  Sun, 29 May 2022 20:59:22 +0200
+
+gnome-shell-extension-cpupower (10.1.2-1~bionic1) bionic; urgency=medium
+
+  * Create bionic release
+
+ -- Fin Christensen <fin-ger@posteo.me>  Sun, 29 May 2022 20:56:12 +0200
+
+gnome-shell-extension-cpupower (10.1.2-1) UNRELEASED; urgency=medium
+
+  * Update version to 10.1.2
+
+ -- Fin Christensen <fin-ger@posteo.me>  Sun, 29 May 2022 20:50:32 +0200
+
+gnome-shell-extension-cpupower (10.1.1-1) UNRELEASED; urgency=medium
+
+  * Update version to 10.1.1
+
+ -- Fin Christensen <fin-ger@posteo.me>  Sun, 29 May 2022 20:42:56 +0200
+
+gnome-shell-extension-cpupower (10.1.0-1~jammy1) jammy; urgency=medium
+
+  * Create jammy release
+
+ -- Fin Christensen <fin-ger@posteo.me>  Sun, 22 May 2022 20:49:28 +0200
+
+gnome-shell-extension-cpupower (10.1.0-1~focal1) focal; urgency=medium
+
+  * Create focal release
+
+ -- Fin Christensen <fin-ger@posteo.me>  Sun, 22 May 2022 20:48:31 +0200
+
+gnome-shell-extension-cpupower (10.1.0-1~bionic1) bionic; urgency=medium
+
+  * Create bionic release
+
+ -- Fin Christensen <fin-ger@posteo.me>  Sun, 22 May 2022 20:46:36 +0200
+
+gnome-shell-extension-cpupower (10.1.0-1) UNRELEASED; urgency=medium
+
+  * Update version to 10.1.0
+
+ -- Fin Christensen <fin-ger@posteo.me>  Sun, 22 May 2022 20:32:28 +0200
+
+gnome-shell-extension-cpupower (10.0.1-1~jammy1) jammy; urgency=medium
+
+  * Create jammy release
+
+ -- Fin Christensen <fin-ger@posteo.me>  Wed, 08 Dec 2021 19:38:37 +0100
+
+gnome-shell-extension-cpupower (10.0.1-1~impish1) impish; urgency=medium
+
+  * Create impish release
+
+ -- Fin Christensen <fin-ger@posteo.me>  Wed, 08 Dec 2021 19:34:42 +0100
+
+gnome-shell-extension-cpupower (10.0.1-1~hirsute1) hirsute; urgency=medium
+
+  * Create hirsute release
+
+ -- Fin Christensen <fin-ger@posteo.me>  Wed, 08 Dec 2021 19:33:21 +0100
+
+gnome-shell-extension-cpupower (10.0.1-1~focal1) focal; urgency=medium
+
+  * Create focal release
+
+ -- Fin Christensen <fin-ger@posteo.me>  Wed, 08 Dec 2021 19:26:20 +0100
+
+gnome-shell-extension-cpupower (10.0.1-1~bionic1) bionic; urgency=medium
+
+  * Create bionic release
+
+ -- Fin Christensen <fin-ger@posteo.me>  Wed, 08 Dec 2021 19:14:26 +0100
+
+gnome-shell-extension-cpupower (10.0.1-1) UNRELEASED; urgency=medium
+
+  * Update version
+
+ -- Fin Christensen <fin-ger@posteo.me>  Wed, 08 Dec 2021 18:24:16 +0100
+
+gnome-shell-extension-cpupower (10.0.0-3~jammy1) jammy; urgency=medium
+
+  * Create jammy release for debian compatibility
+
+ -- Fin Christensen <fin-ger@posteo.me>  Tue, 07 Dec 2021 20:53:46 +0100
+
+gnome-shell-extension-cpupower (10.0.0-3~impish1) impish; urgency=medium
+
+  * Update impish release
+
+ -- Fin Christensen <fin-ger@posteo.me>  Tue, 07 Dec 2021 19:20:46 +0100
+
+gnome-shell-extension-cpupower (10.0.0-3~hirsute1) hirsute; urgency=medium
+
+  * Update hirsute release
+
+ -- Fin Christensen <fin-ger@posteo.me>  Tue, 07 Dec 2021 19:18:46 +0100
+
+gnome-shell-extension-cpupower (10.0.0-3~focal1) focal; urgency=medium
+
+  * Update focal release
+
+ -- Fin Christensen <fin-ger@posteo.me>  Tue, 07 Dec 2021 19:13:26 +0100
+
+gnome-shell-extension-cpupower (10.0.0-3~bionic1) bionic; urgency=medium
+
+  * Change debhelper-compat from =12 to =11
+
+ -- Fin Christensen <fin-ger@posteo.me>  Tue, 07 Dec 2021 19:03:58 +0100
+
+gnome-shell-extension-cpupower (10.0.0-2~impish1) impish; urgency=medium
+
+  * Create impish release
+
+ -- Fin Christensen <fin-ger@posteo.me>  Tue, 07 Dec 2021 19:00:42 +0100
+
+gnome-shell-extension-cpupower (10.0.0-2~hirsute1) hirsute; urgency=medium
+
+  * Create hirsute release
+
+ -- Fin Christensen <fin-ger@posteo.me>  Tue, 07 Dec 2021 18:59:43 +0100
+
+gnome-shell-extension-cpupower (10.0.0-2~bionic1) bionic; urgency=medium
+
+  * Create bionic release
+
+ -- Fin Christensen <fin-ger@posteo.me>  Tue, 07 Dec 2021 18:58:22 +0100
+
+gnome-shell-extension-cpupower (10.0.0-2~focal1) focal; urgency=medium
+
+  * Create focal release
+
+ -- Fin Christensen <fin-ger@posteo.me>  Tue, 07 Dec 2021 18:55:58 +0100
+
+gnome-shell-extension-cpupower (10.0.0-1.3) focal; urgency=medium
+
+  * Add libglib2.0-bin, zip, and unzip to build dependencies
+
+ -- Fin Christensen <fin-ger@posteo.me>  Tue, 07 Dec 2021 15:14:11 +0100
+
+gnome-shell-extension-cpupower (10.0.0-1.2) focal; urgency=medium
+
+  * Change debhelper-compat from =13 to =12
+
+ -- Fin Christensen <fin-ger@posteo.me>  Tue, 07 Dec 2021 15:01:35 +0100
+
+gnome-shell-extension-cpupower (10.0.0-1.1) focal; urgency=medium
+
+  * Change ubuntu distribution to focal
+
+ -- Fin Christensen <fin-ger@posteo.me>  Tue, 07 Dec 2021 14:43:21 +0100
+
+gnome-shell-extension-cpupower (10.0.0-1) bionic; urgency=medium
+
+  * Initial release
+
+ -- Fin Christensen <fin-ger@posteo.me>  Mon, 29 Nov 2021 13:30:58 +0100
